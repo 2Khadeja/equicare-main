@@ -266,5 +266,21 @@ return [
 'qr_code' => 'رمز الاستجابة السريعة',
 'calibration_certificate' => 'شهادة المعايرة',
 'brands' => 'الماركات',
-'description' => 'الوصف'
+'description' => 'الوصف',
+'Governorate' =>'محافظة',
+'Service Request' => 'طلب خدمة',
+'Request equipment' => 'طلب معدات',
+'training request' => 'طلب تدريب ',
+'Directorates' =>'مديرية',
+'Attachment' =>'نوع المرفق',
+'create_Governorate' =>'اضافة محافظة',
+'create_Directorate' =>'اضافة مديرية',
+'manage_Governorates' => 'إدارة المحافظات',
+'manage_Directorates' => 'إدارة المديريات',
+'edit_Governorate'=> 'تعديل المحافظة',
+'manage_Maintenance' => 'إدارة الصيانة',
+'manage_Calibration' => 'إدارة المعايرة',
+'manage_Training' => 'إدارة التدريب',
+'manage_Equipment' => 'إدارة التجهيزات',
+
 ];
