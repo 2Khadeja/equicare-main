@@ -30,6 +30,21 @@
 							value="{{ old('name') }}" />
 						</div>
 						<div class="form-group col-md-6">
+							<label for="Attachment_id"> @lang('equicare.Attachment') </label>
+							<select name="Attachment_id" class="form-control">
+								<option value="">---select---</option>
+								@if(isset($hospitals))
+									@foreach ($hospitals as $hospital)
+										<option value="{{ $hospital->id }}"
+											{{ old('Attachment_id')?'selected':'' }}
+											>{{ $hospital->name }}
+										</option>
+									@endforeach
+								@endif
+							</select>
+						</div>
+
+						<div class="form-group col-md-6">
 							<label for="slug"> @lang('equicare.Short Name') </label>
 							<input type="text" name="slug" class="form-control"
 							value="{{ old('slug') }}" />
@@ -58,6 +73,38 @@
 							<textarea rows="3" name="address" class="form-control"
 							>{{ old('address') }}</textarea>
 						</div>
+						<div class="form-group col-md-6">
+							<label for="Directorates_id"> @lang('equicare.Directorates') </label>
+							<select name="Directorates_id" class="form-control">
+								<option value="">---select---</option>
+								@if(isset($hospitals))
+									@foreach ($hospitals as $hospital)
+										<option value="{{ $hospital->id }}"
+											{{ old('Directorates_id')?'selected':'' }}
+											>{{ $hospital->name }}
+										</option>
+									@endforeach
+								@endif
+							</select>
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="Governorate_id"> @lang('equicare.Governorate') </label>
+							<select name="Governorate_id" class="form-control">
+								<option value="">---select---</option>
+								@if(isset($hospitals))
+									@foreach ($hospitals as $hospital)
+										<option value="{{ $hospital->id }}"
+											{{ old('Governorate_id')?'selected':'' }}
+											>{{ $hospital->name }}
+										</option>
+									@endforeach
+								@endif
+							</select>
+						</div>
+
+
+
 						<div class="form-group col-md-12">
 							<input type="submit" value="@lang('equicare.submit')" class="btn btn-primary btn-flat"/>
 						</div>

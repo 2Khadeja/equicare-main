@@ -149,7 +149,7 @@
 		</div>
 	</div>
 </div>
-{{-- Attend call modal ======================================= --}}
+<!-- {{-- Attend call modal ======================================= --}}
 <div class="modal fade" id="attend_modal" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -224,7 +224,90 @@
 			{!! Form::close() !!}
 		</div>
 	</div>
+</div> -->
+{{-- Attend call modal ======================================= --}}
+<div class="modal fade" id="attend_modal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			{{-- <form action ="{{route('breakdown_attend_call')}}" 
+				method="POST" id="attend_call_form" class="attend_call_form"> --}}
+			{!! Form::open([
+			// 'action'=>'BreakdownController@attend_call',
+			'route'=>'breakdown_attend_call',
+			'method' => 'POST',
+			'class' => 'attend_call_form',
+			'id' => 'attend_call_form'
+			]) !!}
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">@lang('equicare.attend_call')</h4>
+			</div>
+
+			<div class="modal-body">
+				@if (count($errors->attend_call) > 0)
+				<div class="row">
+					<div class="col-md-8">
+						<div class="alert alert-danger">
+							<ul class=" mb-0">
+								@foreach ($errors->attend_call->all() as $error)
+								<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
+					</div>
+				</div>
+				@endif
+
+
+
+				<div class="row">
+
+					<div class="form-group col-md-6">
+						{!! Form::label('call_attend_date_time',__('equicare.call_attend_date_time')) !!}
+						{!! Form::text('call_attend_date_time',null,['class'=>'form-control call_attend_date_time']) !!}
+						{{ Form::hidden('b_id',null,['class'=>'b_id']) }}
+					</div>
+					<div class="form-group col-md-6">
+						{!! Form::label('user',__('equicare.user_attended')) !!}
+						{!! Form::select('user_attended',$users,null,['placeholder'=>'select user','class'=>'form-control
+						user_attended']) !!}
+					</div>
+					<div class="form-group col-md-6">
+						{!! Form::label('service_rendered',__('equicare.service_rendered')) !!}
+						{!! Form::text('service_rendered', null, ['class'=>'form-control service_rendered']) !!}
+					</div>
+					<div class="form-group col-md-6">
+						{!! Form::label('remarks',__('equicare.remarks')) !!}
+						{!! Form::textarea('remarks', null, ['class'=>'form-control remarks','rows'=>2]) !!}
+					</div>
+					<div class="form-group col-md-6">
+						{!! Form::label('maintenance_cost_create',__('equicare.maintenance_cost_create')) !!}
+						{!! Form::text('maintenance_cost_create', null, ['class'=>'form-control maintenance_cost_create']) !!}
+					</div>
+
+					
+					<div class="form-group col-md-6">
+						<label>@lang('equicare.working_status')</label>
+						{!! Form::select('working_status',[
+						'working' => __("equicare.working"),
+						'not working' => __("equicare.not_working"),
+						'pending' => __("equicare.pending")
+						],null,['placeholder' => '--select--','class' => 'form-control test working_status']) !!}
+					</div>
+					<input type="hidden" name="id" class="id" value="">
+
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				{!! Form::submit(__('equicare.submit'),['class'=>'btn btn-flat btn-primary submit_attend btn-sm']) !!}
+				<button type="button" class="btn btn-default" data-dismiss="modal">@lang('equicare.close')</button>
+			</div>
+			{!! Form::close() !!}
+		</div>
+	</div>
 </div>
+
 {{-- call complete modal======================================= --}}
 <div class="modal fade" id="call_complete_modal" role="dialog">
 	<div class="modal-dialog">

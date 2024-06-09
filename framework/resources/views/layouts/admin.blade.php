@@ -134,70 +134,26 @@
           </a>
         </li>
 
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
+        <li class="{{ $page=='hospitals'?'active':'' }}">
           {{-- <a href="{{ url('/admin/accessories') }}"> --}}
-            <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-wrench"></i> <span>Accesorios</span>
+            <a href="{{ url('/admin/Governorate') }}">
+            <i class="fa fa-wrench"></i> <span>@lang('equicare.Governorate')</span>
           </a>
         </li>
 
-        <li class="{{ $page=='equipments'?'active':'' }}">
-          <a href="{{ url('/admin/equipments') }}">
-            <i class="fa fa-stethoscope"></i> <span>Equipos Clinicos</span>
+        <li >
+          {{-- <a href="{{ url('/admin/accessories') }}"> --}}
+            <a href="{{ url('/admin/Directorates') }}">
+            <i class="fa fa-wrench"></i> <span>@lang('equicare.Directorates')</span>
           </a>
         </li>
 
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
-          {{-- <a href="{{ url('/admin/lots') }}"> --}}
-            <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-cubes"></i> <span>Lotes</span>
-          </a>
-        </li>
-        {{-- primera prueba --}}
-        <li class="{{ $page=='brands'?'active':'' }}">
-          <a href="{{ url('/admin/brands') }}">
-            <i class="fa fa-tag"></i> <span>Marcas</span>
-          </a>
-        </li>
 
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
-          {{-- <a href="{{ url('/admin/models') }}"> --}}
-            <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-book"></i> <span>Modelos</span>
-          </a>
-        </li>
 
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
-          {{-- <a href="{{ url('/admin/providers') }}"> --}}
-            <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-truck"></i> <span>Proveedores</span>
-          </a>
-        </li>
 
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
-          {{-- <a href="{{ url('/admin/qr-reader') }}"> --}}
-            <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-qrcode"></i> <span>Leer codigo QR</span>
-          </a>
-        </li>
-
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
-          {{-- <a href="{{ url('/admin/tickets') }}"> --}}
-            <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-ticket"></i> <span>Tickets</span>
-          </a>
-        </li>
-
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
-          {{-- <a href="{{ url('/admin/service-orders') }}"> --}}
-            <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-file-text-o"></i> <span>Órdenes de servicio</span>
-          </a>
-        </li>
-
-        <li class="{{ $page=='healthfacilitys'?'active':'' }}">
-          <a href="{{ url('/admin/healthfacilitys') }}">
-            <i class="fa fa-healthfacility-o"></i> <span>@lang('equicare.healthfacility')</span>
+        <li class="{{ $page=='hospitals'?'active':'' }}">
+          <a href="{{ url('/admin/hospitals') }}">
+            <i class="fa fa-hospital-o"></i> <span>@lang('equicare.hospital')</span>
           </a>
         </li>
 
@@ -206,8 +162,44 @@
             <i class="fa fa-wrench"></i> <span>@lang('equicare.departments')</span>
           </a>
         </li>
+        <li class="{{ $page=='equipments'?'active':'' }}">
+          <a href="{{ url('/admin/equipments') }}">
+            <i class="fa fa-stethoscope"></i> <span>@lang('equicare.equipments')</span>
+          </a>
+        </li>
 
-        
+
+        <li class="{{ $page=='manage_Maintenance'?'active':'' }}">
+          <a href="{{ url('admin/call/breakdown_maintenance') }}">
+          <i class="fa fa-wrench"></i> <span>@lang('equicare.manage_Maintenance')</span>
+          </a>
+        </li>
+
+        {{-- <li class="{{ $page=='preventive_maintenance'?'active':'' }}">
+          <a href="{{ url('admin/call/preventive_maintenance') }}">
+            <i class="fa fa-barcode"></i> @lang('equicare.preventive_maintenance')
+          </a>
+        </li> --}}
+
+
+        <li class="{{ $page=='manage_Calibration'?'active':'' }}">
+          <a href="{{ url('admin/calibration') }}">
+          <i class="fa fa-balance-scale"></i> <span>@lang('equicare.manage_Calibration')</span>
+          </a>
+        </li>
+
+        <li class="{{ $page=='manage_Training'?'active':'' }}">
+          <a href="{{ url('/admin/Training') }}">
+            <i class="fa fa-user"></i> <span>@lang('equicare.manage_Training')</span>
+          </a>
+        </li>
+        <li class="{{ $page=='manage_Equipment'?'active':'' }}">
+          <a href="{{ url('/admin/equipments') }}">
+            <i class="fa fa-stethoscope"></i> <span>@lang('equicare.manage_Equipment')</span>
+          </a>
+        </li>
+
+
         
         @if($page == "breakdown_maintenance" || $page == "preventive_maintenance")
             @php($class="treeview menu-open")
@@ -221,7 +213,7 @@
 
          <li class="{{ $class }} {{ $active }}">
           <a href="#" class="">
-            <i class="fa fa-gear"></i> <span>Mantenimientos</span>
+            <i class="fa fa-gear"></i> <span>@lang('equicare.Service Request')</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -237,14 +229,28 @@
                 <i class="fa fa-barcode"></i> @lang('equicare.preventive_maintenance')
               </a>
             </li>
+            <li class="{{ $page=='preventive_maintenance'?'active':'' }}">
+              <a href="{{ url('admin/call/preventive_maintenance') }}">
+                <i class="fa fa-barcode"></i> @lang('equicare.Request equipment')
+              </a>
+            </li>
+
+            <li class="{{ $page=='preventive_maintenance'?'active':'' }}">
+              <a href="{{ url('admin/call/preventive_maintenance') }}">
+                <i class="fa fa-barcode"></i> @lang('equicare.training request')
+              </a>
+            </li>
+
+            <li class="{{ $page=='calibrations'?'active':'' }}">
+              <a href="{{ url('admin/calibration') }}">
+                <i class="fa fa-balance-scale"></i> <span>@lang('equicare.calibrations')</span>
+              </a>
+            </li>
+    
+
           </ul>
         </li>
 
-        <li class="{{ $page=='calibrations'?'active':'' }}">
-          <a href="{{ url('admin/calibration') }}">
-            <i class="fa fa-balance-scale"></i> <span>@lang('equicare.calibrations')</span>
-          </a>
-        </li>
 
         <li class="{{ $page=='maintenance_cost'?'active':'' }}">
           <a href="{{ url('admin/maintenance_cost') }}">
